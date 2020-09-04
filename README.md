@@ -4,7 +4,7 @@ If the inlet temperature is above 35deg C enable iDRAC dynamic control and exit 
 If inlet temperature is below 35deg C set fan control to manual and set fan speed to predetermined value.<br>
 The tower servers T320, T420 & T620 inlet temperature sensor is after the HDDs so temperature will be higher than the ambient temperature.<br>
 
-As you may have found out when you cross flash a Dell H310 raid controller to IT mode and as soon as the iDRAC detects a that a drive has been inserted the fans spin up and get loud even when the ambient temperature is low say 20deg  C. This is as designed by Dell, which sucks.
+As you may have found out when you cross flash a Dell H310 raid controller to IT mode and as soon as the iDRAC detects a that a drive has been inserted the fans spin up and get loud even when the ambient temperature is low, say 20deg  C. This is as designed by Dell, which sucks.
 
 Directly from page 30 PowerEdge T320 Technical Guide
 
