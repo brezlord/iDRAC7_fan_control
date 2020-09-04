@@ -18,6 +18,23 @@ IDRAC_IP="IP address of iDRAC"
 IDRAC_USER="user"
 IDRAC_PASSWORD="passowrd"
 ```
+There are multiple temperature sensors that you can choose to use. Just uncomment the one you would like the script to monitor. Not all temperature sensors are available in some models. You can run the following command from the shel to list all of the available temperature sensors on you generation 12 Dell sever.
+```
+ipmitool -I lanplus -H ip address -U username -P password sdr type temperature
+```
+Output from a Dell T320
+```
+Inlet Temp       | 04h | ok  |  7.1 | 23 degrees C
+Temp             | 0Eh | ok  |  3.1 | 33 degrees C
+Temp             | 0Fh | ns  |  3.2 | Disabled
+```
+Output from a Dell T720
+```
+Inlet Temp       | 04h | ok  |  7.1 | 20 degrees C
+Exhaust Temp     | 01h | ok  |  7.1 | 31 degrees C
+Temp             | 0Eh | ok  |  3.1 | 50 degrees C
+Temp             | 0Fh | ok  |  3.2 | 45 degrees C
+```
 You will need to enable IPMI in the iDRAC and the user must have administrator privileges.
 
 You can test the script by running ./fan_sontrol.sh from the scrips directory. If it is working you should get an output similar to this;
