@@ -6,7 +6,7 @@ The tower servers T320, T420 & T620 inlet temperature sensor is after the HDDs s
 
 There is no warranty and you use this scrip at your own risk. Please ensure you review the temperature setpoints for your use case to ensure your hard drives are kept at your desired temperature. You can change the temperature set points in the script to suit your needs.
 
-I use this script on a Dell T320 running TrueNAS 12 and it work great. The server lives in my garage, which in Western Austrail can get into the low 40s deg C. 
+I use this script on a Dell T320 running TrueNAS 12 and it work great. The server lives in my garage, which in Western Australia can get into the low 40s deg C. 
 
 You will need to create a dataset for the script to reside in and make it executable, this assumes that you have a pool called tank and a dataset named fan_control. 
 ```
