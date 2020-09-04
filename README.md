@@ -28,7 +28,7 @@ Inlet Temp       | 04h | ok  |  7.1 | 23 degrees C
 Temp             | 0Eh | ok  |  3.1 | 33 degrees C
 Temp             | 0Fh | ns  |  3.2 | Disabled
 ```
-Output from a Dell T720
+Output from a Dell R720
 ```
 Inlet Temp       | 04h | ok  |  7.1 | 20 degrees C
 Exhaust Temp     | 01h | ok  |  7.1 | 31 degrees C
