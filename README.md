@@ -1,8 +1,15 @@
-# iDRAC7_fan_control
-A simple script to control fan speeds on Dell generation 12 PowerEdge servers.<br>
-If the inlet temperature is above 35deg C enable iDRAC dynamic control and exit program.<br>
-If inlet temperature is below 35deg C set fan control to manual and set fan speed to predetermined value.<br>
-The tower servers T320, T420 & T620 inlet temperature sensor is after the HDDs so temperature will be higher than the ambient temperature.<br>
+# iDRAC7 fan control
+A simple script to control fan speeds on Dell generation 12 PowerEdge servers.
+If the inlet temperature is above 35deg C enable iDRAC dynamic control and exit program.
+If inlet temperature is below 35deg C set fan control to manual and set fan speed to predetermined value.
+The tower servers T320, T420 & T620 inlet temperature sensor is after the HDDs so temperature will be higher than the ambient temperature.
+
+As you may have found out when you cross flash a Dell H310 raid controller to IT mode and as soon as the iDRAC detects a that a drive has been inserted the fans spin up and get loud even when the ambient temperature is low say 20deg  C. This is as designed by Dell, which sucks.
+
+Directly from page 30 PowerEdge T320 Technical Guide
+
+*RAID Setup with PERC H310: A system configured as non-RAID has a higher noise level than a system configured as RAID. With non-RAID, the temperature of the hard disk drives is not monitored, which causes the fan speed to be higher to ensure sufficient cooling resulting in higher noise level*
+
 
 There is no warranty and you use this scrip at your own risk. Please ensure you review the temperature setpoints for your use case to ensure your hard drives are kept at your desired temperature. You can change the temperature set points in the script to suit your needs.
 
