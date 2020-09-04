@@ -18,7 +18,6 @@ IDRAC_PASSWORD="passowrd"
 ```
 You will need to enable IPMI in the iDRAC and the user must have administrator privileges.
 
-
 You can test the script by running ./fan_sontrol.sh from the scrips directory. If it is working you should get an output similar to this;
 ```
 Date 04-09-2020 10:24:52
@@ -29,3 +28,4 @@ Date 04-09-2020 10:24:52
 
 --> Setting fan speed to 20%
 ```
+Once you have verified the script is working you can set it to run every 5 minuites via cron. On TrueNAS this can be found under the Tasks menu --> Cron Jobs.
