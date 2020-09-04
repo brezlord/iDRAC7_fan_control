@@ -44,7 +44,7 @@ Temp             | 0Fh | ok  |  3.2 | 45 degrees C
 ```
 You will need to enable IPMI in the iDRAC and the user must have administrator privileges.
 
-You can test the script by running ./fan_sontrol.sh from the scrips directory. If it is working you should get an output similar to this;
+You can test the script by running ./fan_control.sh from the scrips directory. If it is working you should get an output similar to this;
 ```
 Date 04-09-2020 10:24:52
 --> iDRAC IP Address: 192.168.40.140
