@@ -4,14 +4,14 @@ If the monitored temperature is above 35deg C enable iDRAC dynamic control and e
 If monitored temperature is below 35deg C set fan control to manual and set fan speed to predetermined value.<br>
 The tower servers T320, T420 & T620 inlet temperature sensor is after the HDDs so temperature will be higher than the ambient temperature.<br>
 
-As you may have found out when you cross flash a Dell H310 raid controller to IT mode and as soon as the iDRAC detects a that a drive has been inserted the fans spin up and get loud even when the ambient temperature is low, say 20deg  C. This is as designed by Dell, which sucks.
+As you may have discovered, when you cross flash a Dell H310 raid controller to IT mode and as soon as the iDRAC detects that a drive has been inserted the fans spin up and get loud even when the ambient temperature is low, say 20deg  C. This is as designed by Dell, which sucks.
 
-Directly from page 30 PowerEdge T320 Technical Guide
+#### Directly from page 30 PowerEdge T320 Technical Guide
 
 *RAID Setup with PERC H310: A system configured as non-RAID has a higher noise level than a system configured as RAID. With non-RAID, the temperature of the hard disk drives is not monitored, which causes the fan speed to be higher to ensure sufficient cooling resulting in higher noise level*
 
 
-There is no warranty and you use this scrip at your own risk. Please ensure you review the temperature setpoints for your use case to ensure your hard drives are kept at your desired temperature. You can change the temperature set points in the script to suit your needs.
+There is no warranty provided and you use this scrip at your own risk. Please ensure you review the temperature setpoints for your use case to ensure your hard drives are kept at your desired temperature, change the setpoints as needed. I suggest that you trend you HDD temps to validate your setting and that you setup alarms in TrueNAS so that you get warnings if the HDD temperatures get to high.
 
 I use this script on a Dell T320 running TrueNAS 12 and it work great. The server lives in my garage, which in Western Australia can get into the low 40s deg C. 
 
