@@ -11,6 +11,7 @@
 IDRAC_IP="IP address of iDRAC"
 IDRAC_USER="user"
 IDRAC_PASSWORD="passowrd"
+# Fan speed in %
 SPEED0="0x00"
 SPEED5="0x05"
 SPEED10="0x0a"
