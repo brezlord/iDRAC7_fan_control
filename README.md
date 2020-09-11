@@ -27,7 +27,7 @@ IDRAC_PASSWORD="passowrd"
 ```
 There are multiple temperature sensors that you can choose to use. Just uncomment the one you would like the script to monitor. Not all temperature sensors are available in some models. You can run the following command from the shel to list all of the available temperature sensors on you generation 12 Dell sever.
 ```
-ipmitool -I lanplus -H ip address -U username -P password sdr type temperature
+ipmitool -I lanplus -H <ip address> -U <username> -P <password> sdr type temperature
 ```
 Output from a Dell T320
 ```
