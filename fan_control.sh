@@ -49,8 +49,14 @@ else
 fi
 
 # Set fan speed dependant on ambient temperature if inlet temperaturte is below 35deg C.
-# If inlet temperature between 0 and 19deg C then set fans to 15%.
-if [ "$T" -ge 0 ] && [ "$T" -le 19 ]
+# If inlet temperature between 1 and 14deg C then set fans to 10%.
+if [ "$T" -ge 1 ] && [ "$T" -le 14 ]
+then
+  echo "--> Setting fan speed to 10%"
+  ipmitool -I lanplus -H $IDRAC_IP -U $IDRAC_USER -P $IDRAC_PASSWORD raw 0x30 0x30 0x02 0xff $SPEED10
+
+# If inlet temperature between 15 and 19deg C then set fans to 15%
+elif [ "$T" -ge 15 ] && [ "$T" -le 19 ]
 then
   echo "--> Setting fan speed to 15%"
   ipmitool -I lanplus -H $IDRAC_IP -U $IDRAC_USER -P $IDRAC_PASSWORD raw 0x30 0x30 0x02 0xff $SPEED15
