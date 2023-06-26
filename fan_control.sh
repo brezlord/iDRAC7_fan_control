@@ -36,7 +36,7 @@ echo "--> iDRAC IP Address: $IDRAC_IP"
 echo "--> Current Inlet Temp: $T"
 
 # If ambient temperature is above 35deg C enable dynamic control and exit, if below set manual control.
-if [[ $T > $TEMP_THRESHOLD ]]
+if [[ $T -ge $TEMP_THRESHOLD ]]
 then
   echo "--> Temperature is above 35deg C"
   echo "--> Enabled dynamic fan control"
