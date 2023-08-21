@@ -56,7 +56,7 @@ Date 04-09-2020 10:24:52
 ```
 Once you have verified the script is working you can set it to run every 5 minuites via cron. On TrueNAS this can be found under the Tasks menu --> Cron Jobs.
 
-##Running as a service
+## Running as a service
 
 Once the service is up and running, the temprature will be checked every `INTERVAL_SEC` seconds. Fan speed will change if the temprature has changed and warrants a speed change. 
 
