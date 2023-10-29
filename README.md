@@ -11,11 +11,11 @@ As you may have discovered, when you cross flash a Dell H310 raid controller to 
 *RAID Setup with PERC H310: A system configured as non-RAID has a higher noise level than a system configured as RAID. With non-RAID, the temperature of the hard disk drives is not monitored, which causes the fan speed to be higher to ensure sufficient cooling resulting in higher noise level*
 
 
-There is no warranty provided and you use this scrip at your own risk. Please ensure you review the temperature setpoints for your use case to ensure your hard drives are kept at your desired temperature, change the setpoints as needed. I suggest that you trend you HDD temps to validate your setting and that you setup alarms in TrueNAS so that you get warnings if the HDD temperatures get to high.
+There is no warranty provided and you use this scrip at your own risk. Please ensure you review the temperature set points for your use case to ensure your hard drives are kept at your desired temperature, change the set points as needed. I suggest that you trend you HDD temps to validate your setting and that you setup alarms in TrueNAS so that you get warnings if the HDD temperatures get to high.
 
 I use this script on a Dell T320 running TrueNAS 12 and it work great. The server lives in my garage, which in Western Australia can get into the low 40s deg C. 
 
-You will need to create a dataset for the script to reside in and make it executable, this assumes that you have a pool called tank and a dataset named fan_control. 
+You will need to create a data set for the script to reside in and make it executable, this assumes that you have a pool called tank and a dataset named fan_control. 
 ```
 chmod +x /mnt/tank/fan_control/fan_control.sh
 ```
@@ -54,6 +54,7 @@ Date 04-09-2020 10:24:52
 
 --> Setting fan speed to 20%
 ```
+systemd
 Once you have verified the script is working you can set it to run every 5 minuites via cron. On TrueNAS this can be found under the Tasks menu --> Cron Jobs.
 
 ## Running as a service
@@ -80,3 +81,9 @@ If you are using a location other than `/usr/local/sbin/fan_control_dyn.sh` then
 ```
 ExecStart=/MY_ABSOLUTE_PATH/fan_control_dyn.sh
 ```
+=======
+Once you have verified the script is working you can set it to run every 5 minutes via cron.
+
+On TrueNAS Core this can be found under the Tasks menu --> Cron Jobs.
+
+On TrueNAS Scale this can be found under the System menu --> Advanced Cron Jobs tab.
