@@ -57,4 +57,5 @@ Date 04-09-2020 10:24:52
 Once you have verified the script is working you can set it to run every 5 minutes via cron.
 
 On TrueNAS Core this can be found under the Tasks menu --> Cron Jobs.
+
 On TrueNAS Scale this can be found under the System menu --> Advanced Cron Jobs tab.
