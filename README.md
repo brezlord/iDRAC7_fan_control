@@ -54,6 +54,34 @@ Date 04-09-2020 10:24:52
 
 --> Setting fan speed to 20%
 ```
+systemd
+Once you have verified the script is working you can set it to run every 5 minuites via cron. On TrueNAS this can be found under the Tasks menu --> Cron Jobs.
+
+## Running as a service
+
+Once the service is up and running, the temprature will be checked every `INTERVAL_SEC` seconds. Fan speed will change if the temprature has changed and warrants a speed change. 
+
+There is a delay before the temprature monitoring begins and is controlled by the variable `INITIAL_START_DELAY_SEC`. After this initial delay the time between checks is governed by the `INTERVAL_SEC` value.
+
+When the server is shutdown/rebooted or started, the manual control is reset, this is to avoid any left over low fan speeds from previous power outage/powerdown/shutdown etc.
+
+The files required to run the service are `fan_control_dyn.sh` `fancontrol.service`
+
+
+Simply execute the following to get the service set up.
+```
+sudo cp fan_control_dyn.sh /usr/local/sbin/fan_control_dyn.sh
+sudo chmod 755 /usr/local/sbin/fan_control_dyn.sh
+sudo cp fancontrol.service /etc/systemd/system/fancontrol.service
+sudo systemctl enable fancontrol.service
+sudo systemctl start fancontrol.service
+```
+
+If you are using a location other than `/usr/local/sbin/fan_control_dyn.sh` then you'll need to modify the location in the `fancontrol.service` file as well 
+```
+ExecStart=/MY_ABSOLUTE_PATH/fan_control_dyn.sh
+```
+=======
 Once you have verified the script is working you can set it to run every 5 minutes via cron.
 
 On TrueNAS Core this can be found under the Tasks menu --> Cron Jobs.

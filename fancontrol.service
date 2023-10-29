@@ -1,0 +1,20 @@
+[Unit]
+Description=Fan Control script
+
+StartLimitIntervalSec=14400
+StartLimitBurst=10
+
+[Service]
+Restart=on-abnormal
+
+User=root
+Group=root
+
+ExecStart=/usr/local/sbin/fan_control_dyn.sh
+
+ProtectSystem=full
+
+TimeoutStopSec=5s
+
+[Install]
+WantedBy=multi-user.target
